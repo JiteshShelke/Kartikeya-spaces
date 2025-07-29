@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="p-4">
+  <div class="container">
+    <h2>Add New Property</h2>
+    <form id="propertyForm">
+      <div class="mb-3"><input class="form-control" name="name" placeholder="Property Name" required></div>
+      <div class="mb-3">
+        <select class="form-select" name="type" required>
+          <option value="">Select Type</option>
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+          <option value="land">Land</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <select class="form-select" name="transaction" required>
+          <option value="">Select Transaction</option>
+          <option value="buy">Buy</option>
+          <option value="sell">Sell</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <select class="form-select" name="stage" required>
+          <option value="">Select Stage</option>
+          <option value="ongoing">Ongoing</option>
+          <option value="completed">Completed</option>
+          <option value="reposition">Reposition</option>
+        </select>
+      </div>
+      <div class="mb-3"><input class="form-control" name="location" placeholder="Location (e.g., navi-mumbai)" required></div>
+      <div class="mb-3"><input class="form-control" name="price" placeholder="Price (e.g., ₹1.5 Cr)" required></div>
+      <div class="mb-3"><input class="form-control" name="area" placeholder="Area (e.g., 1200 sq.ft)" required></div>
+      <div class="mb-3"><textarea class="form-control" name="description" placeholder="Description" required></textarea></div>
+      <div class="mb-3"><input class="form-control" name="image" placeholder="Image URL (e.g., images/s4.jpg)" required></div>
+
+      <button class="btn btn-primary" type="submit">Add Property</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('propertyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      // Get existing properties from localStorage
+      const existing = JSON.parse(localStorage.getItem("adminProperties") || "[]");
+
+      // Add new one
+      existing.push(data);
+
+      // Save back to localStorage
+      localStorage.setItem("adminProperties", JSON.stringify(existing));
+
+      alert("Property added!");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
