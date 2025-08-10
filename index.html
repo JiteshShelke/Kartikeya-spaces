@@ -52,7 +52,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              <img src="./images/kartikeya logo.png" alt="" style="width: 200px; height: 100px;">
+              <img src="./images/kartikeya logo.png" alt="" style="width: 200px; height: 100px;" loading="lazy">
             </span>
           </a>
 
@@ -110,17 +110,24 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-4 bg-white">
-            <form id="quoteEnquiryForm">
+            <form id="quoteEnquiryForm" class="google-form">
               <div class="row g-3">
+
+                <!-- Hidden field for identifying form -->
+                <input type="hidden" name="formName" value="ContactUs">
+
                 <div class="col-md-6">
                   <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                 </div>
+
                 <div class="col-md-6">
                   <input type="email" class="form-control" name="email" placeholder="Email Address" required>
                 </div>
+
                 <div class="col-md-6">
                   <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
                 </div>
+
                 <div class="col-md-6">
                   <select class="form-select" name="service" required>
                     <option value="">-- Select Service --</option>
@@ -130,16 +137,11 @@
                     <option value="Consult">Consultation</option>
                   </select>
                 </div>
+
                 <div class="col-12">
                   <textarea class="form-control" name="message" rows="4" placeholder="Write your message here..."
                     required></textarea>
                 </div>
-
-                <!-- Hidden Fields for FormSubmit -->
-                <input type="hidden" name="_subject" value="New Contact Request - Kartikeya Spaces">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
               </div>
 
               <div class="text-center mt-4">
@@ -149,10 +151,11 @@
               </div>
 
               <!-- Success Message -->
-              <div id="quoteSuccessMsg" class="alert alert-success mt-3 text-center" style="display: none;">
-                ✅ Your request has been sent successfully!
+              <div id="quoteSuccessMsg" class="alert alert-success mt-3 text-center" style="display: none; background-color: #fa4952; color: white;">
+                Your request has been sent successfully!
               </div>
             </form>
+
           </div>
         </div>
       </div>
@@ -161,7 +164,7 @@
     <!-- slider section -->
     <section class="slider_section ">
       <div class="slider_bg_box">
-        <img src="images/slider-bg.jpg" alt="">
+        <img src="images/slider-bg.jpg" alt=""  loading="lazy">
       </div>
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -350,7 +353,9 @@
             <div class="tab-content text-center">
               <div class="tab-pane active" id="rent">
                 <div class="Rent_form find_form">
-                  <form id="rentEnquiryForm">
+                  <form id="rentEnquiryForm" class="google-form">
+                    <input type="hidden" name="formName" value="Rent">
+
                     <!-- Name & Email -->
                     <div class="form-row">
                       <div class="col-md-6 px-0">
@@ -380,7 +385,7 @@
                       </div>
                     </div>
 
-                    <!-- Room -->
+                    <!-- Room & Price -->
                     <div class="form-row">
                       <div class="col-md-6 px-0">
                         <div class="form-group">
@@ -392,8 +397,6 @@
                           </select>
                         </div>
                       </div>
-
-                      <!-- Price -->
                       <div class="col-md-6 px-0">
                         <div class="form-group">
                           <input type="text" class="form-control" name="price" id="inputRentPrice"
@@ -402,13 +405,10 @@
                       </div>
                     </div>
 
-                    <!-- Hidden fields for FormSubmit -->
-                    <input type="hidden" name="_subject" value="New Rent Enquiry - Kartikeya Spaces" />
-                    <input type="hidden" name="_captcha" value="false" />
-
                     <!-- Success message -->
-                    <p id="rentSuccessMsg" style="display:none;" class="text-success">✅ Rent Enquiry submitted
-                      successfully!</p>
+                    <p id="rentSuccessMsg" style="display: none; background-color: #fa4952; color: white  !important;" class="text-success">
+                      Rent Enquiry submitted successfully!
+                    </p>
 
                     <!-- Submit Button -->
                     <div class="btn-box">
@@ -417,13 +417,16 @@
                       </button>
                     </div>
                   </form>
+
                 </div>
               </div>
 
 
               <div class="tab-pane" id="buy">
                 <div class="Buy_form find_form">
-                  <form id="buyEnquiryForm">
+                  <form id="buyEnquiryForm" class="google-form">
+                    <input type="hidden" name="formName" value="Buy">
+
                     <!-- Name & Email -->
                     <div class="form-row">
                       <div class="col-md-6 px-0">
@@ -473,13 +476,9 @@
                       </div>
                     </div>
 
-                    <!-- Hidden fields for FormSubmit -->
-                    <input type="hidden" name="_subject" value="New Buy Enquiry - Kartikeya Spaces" />
-                    <input type="hidden" name="_captcha" value="false" />
-
                     <!-- Success message -->
-                    <p id="buySuccessMsg" style="display:none;" class="text-success">
-                      ✅ Buy Enquiry submitted successfully!
+                    <p id="buySuccessMsg" style="display: none; background-color: #fa4952; color: white  !important;" class="text-success">
+                      Buy Enquiry submitted successfully!
                     </p>
 
                     <!-- Submit Button -->
@@ -489,6 +488,7 @@
                       </button>
                     </div>
                   </form>
+
                 </div>
               </div>
 
@@ -532,7 +532,7 @@
         </div>
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+            <img src="images/about-img.jpg" alt=""  loading="lazy">
           </div>
         </div>
 
@@ -626,20 +626,25 @@
                 <input type="text" name="name" id="enqName" class="form-control" placeholder="Your Full Name"
                   required />
               </div>
+
               <div class="mb-3">
                 <input type="tel" name="phone" id="enqPhone" class="form-control" placeholder="Phone Number"
                   pattern="[0-9]{10}" required />
               </div>
+
               <div class="mb-3">
                 <input type="email" name="email" id="enqEmail" class="form-control" placeholder="Email Address"
                   required />
               </div>
+
               <div class="mb-3">
                 <textarea name="message" id="enqMessage" class="form-control" rows="5" placeholder="Your message..."
                   required></textarea>
               </div>
 
+              <!-- Hidden fields -->
               <input type="hidden" name="property" id="enqProperty" />
+              <input type="hidden" name="formName" value="PropertyEnquiry" />
               <input type="hidden" name="_subject" value="New Property Enquiry - Kartikeya Spaces" />
               <input type="hidden" name="_captcha" value="false" />
 
@@ -651,15 +656,15 @@
 
               <a id="whatsappLink" class="whatsapp-btn" target="_blank">WhatsApp</a>
 
-              <p id="successMsg" class="text-success text-center mt-3" style="display: none;">✅ Enquiry submitted
-                successfully!</p>
+              <p id="successMsg" class="text-success text-center mt-3" style="display: none; background-color: #fa4952; color: white  !important;" >
+                Enquiry submitted successfully!
+              </p>
             </form>
+
           </div>
         </div>
       </div>
   </section>
-
-
   <!-- end sale section -->
 
   <!-- why us section -->
@@ -675,7 +680,7 @@
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/w1.png" alt="">
+              <img src="images/w1.png" alt="" loading="lazy">
             </div>
             <div class="detail-box">
               <h5>
@@ -692,7 +697,7 @@
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/w2.png" alt="">
+              <img src="images/w2.png" alt="" loading="lazy">
             </div>
             <div class="detail-box">
               <h5>
@@ -708,7 +713,7 @@
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/w3.png" alt="">
+              <img src="images/w3.png" alt="" loading="lazy">
             </div>
             <div class="detail-box">
               <h5>
@@ -880,9 +885,10 @@
                 About Us
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, vitae. Dolorem incidunt
-                consectetur, recusandae enim officiis mollitia modi consequatur ab non animi provident quis asperiores
-                eius omnis suscipit maiores perferendis?
+                Kartikeya Spaces is Navi Mumbai’s trusted commercial real estate partner, specializing in office,
+                retail, and warehouse leasing for over 15 years. We offer personalized solutions, expert market
+                insights, and affordable pricing for businesses seeking premium commercial properties. Let us help you
+                find the right space to grow your business.
               </p>
             </div>
           </div>
@@ -918,7 +924,7 @@
                 <a href="">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
-                <a href="">
+                <a href="https://www.linkedin.com/company/kartikeya-spaces/" target="_blank">
                   <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
                 <a href="">
@@ -965,9 +971,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="js/form-submit.js"></script>
+  <!-- <script src="js/form-submit.js"></script> -->
 
   <script src="js/property-listing.js"></script>
+  <script src="js/forms.js"></script>
 
 
 

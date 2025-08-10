@@ -669,8 +669,8 @@ a:focus {
 }
 
 .about_section.team_layout .heading_container h2 {
-  font-weight: 700;
-  font-size: 36px;
+  /* font-weight: 700;
+  font-size: 36px; */
   color: #333;
   margin-bottom: 30px;
   position: relative;

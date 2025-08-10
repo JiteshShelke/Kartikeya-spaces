@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxn_i8N1FlPvK4eaZtMUced9np8R6KxESy7TVrweO99E-aFF6oUQ1FIbUvsoLUUqGJyxA/exec"; // Google Apps Script Web App URL
   const properties = [
     {
       name: "2BHK Flat in Kharghar",
@@ -85,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  window.filterProperties = filterProperties; // Needed for the Search button onclick
+  window.filterProperties = filterProperties;
 
   function openModal(propertyName) {
     const property = properties.find(p => p.name === propertyName);
@@ -110,41 +112,54 @@ Please contact me with more details.`.trim();
     document.getElementById("enquiryModal").style.display = "block";
   }
 
-  window.openModal = openModal; // Needed for inline onclick
+  window.openModal = openModal;
 
   function closeModal() {
     document.getElementById("enquiryModal").style.display = "none";
   }
 
-  window.closeModal = closeModal; // Needed for inline onclick
+  window.closeModal = closeModal;
 
+  // ✅ Send to Google Apps Script instead of formsubmit
   document.getElementById("enquiryForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const form = e.target;
-    const data = new FormData(form);
+    const formData = new URLSearchParams();
+    formData.append("formName", "PropertyEnquiry");
+
+    Array.from(form.elements).forEach(el => {
+      if (el.name) {
+        formData.append(el.name, el.value);
+      }
+    });
+
     const submitBtn = form.querySelector("button[type=submit]");
     submitBtn.disabled = true;
 
-    fetch("https://formsubmit.co/ajax/jitesh.trueview@gmail.com", {
+    fetch(scriptURL, {
       method: "POST",
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        document.getElementById("successMsg").style.display = "block";
-        form.reset();
-        setTimeout(() => {
-          closeModal();
-          document.getElementById("successMsg").style.display = "none";
-        }, 3000);
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    }).catch(() => {
-      alert("Error sending enquiry. Please check your internet connection.");
-    }).finally(() => {
-      submitBtn.disabled = false;
-    });
+      body: formData,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          document.getElementById("successMsg").style.display = "block";
+          form.reset();
+          setTimeout(() => {
+            closeModal();
+            document.getElementById("successMsg").style.display = "none";
+          }, 3000);
+        } else {
+          alert("❌ Error: " + data.message);
+        }
+      })
+      .catch(() => {
+        alert("Error sending enquiry. Please check your internet connection.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
   });
 
   function capitalize(str) {

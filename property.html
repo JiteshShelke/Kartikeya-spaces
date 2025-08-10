@@ -49,7 +49,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              <img src="./images/kartikeya logo.png" alt="" style="width: 200px; height: 100px;">
+              <img src="./images/kartikeya logo.png" alt="" style="width: 200px; height: 100px;" loading="lazy">
             </span>
           </a>
 
@@ -107,17 +107,24 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-4 bg-white">
-            <form id="quoteEnquiryForm">
+            <form id="quoteEnquiryForm" class="google-form">
               <div class="row g-3">
+
+                <!-- Hidden field for identifying form -->
+                <input type="hidden" name="formName" value="ContactUs">
+
                 <div class="col-md-6">
                   <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                 </div>
+
                 <div class="col-md-6">
                   <input type="email" class="form-control" name="email" placeholder="Email Address" required>
                 </div>
+
                 <div class="col-md-6">
                   <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
                 </div>
+
                 <div class="col-md-6">
                   <select class="form-select" name="service" required>
                     <option value="">-- Select Service --</option>
@@ -127,16 +134,11 @@
                     <option value="Consult">Consultation</option>
                   </select>
                 </div>
+
                 <div class="col-12">
                   <textarea class="form-control" name="message" rows="4" placeholder="Write your message here..."
                     required></textarea>
                 </div>
-
-                <!-- Hidden Fields for FormSubmit -->
-                <input type="hidden" name="_subject" value="New Contact Request - Kartikeya Spaces">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
               </div>
 
               <div class="text-center mt-4">
@@ -146,8 +148,9 @@
               </div>
 
               <!-- Success Message -->
-              <div id="quoteSuccessMsg" class="alert alert-success mt-3 text-center" style="display: none;">
-                ✅ Your request has been sent successfully!
+              <div id="quoteSuccessMsg" class="alert alert-success mt-3 text-center"
+                style="display: none; background-color: #fa4952; color: white;">
+                Your request has been sent successfully!
               </div>
             </form>
           </div>
@@ -243,20 +246,25 @@
                   <input type="text" name="name" id="enqName" class="form-control" placeholder="Your Full Name"
                     required />
                 </div>
+
                 <div class="mb-3">
                   <input type="tel" name="phone" id="enqPhone" class="form-control" placeholder="Phone Number"
                     pattern="[0-9]{10}" required />
                 </div>
+
                 <div class="mb-3">
                   <input type="email" name="email" id="enqEmail" class="form-control" placeholder="Email Address"
                     required />
                 </div>
+
                 <div class="mb-3">
                   <textarea name="message" id="enqMessage" class="form-control" rows="5" placeholder="Your message..."
                     required></textarea>
                 </div>
 
+                <!-- Hidden fields -->
                 <input type="hidden" name="property" id="enqProperty" />
+                <input type="hidden" name="formName" value="PropertyEnquiry" />
                 <input type="hidden" name="_subject" value="New Property Enquiry - Kartikeya Spaces" />
                 <input type="hidden" name="_captcha" value="false" />
 
@@ -268,8 +276,10 @@
 
                 <a id="whatsappLink" class="whatsapp-btn" target="_blank">WhatsApp</a>
 
-                <p id="successMsg" class="text-success text-center mt-3" style="display: none;">✅ Enquiry submitted
-                  successfully!</p>
+                <p id="successMsg" class="text-success text-center mt-3"
+                  style="display: none; background-color: #fa4952; color: white  !important;">
+                  Enquiry submitted successfully!
+                </p>
               </form>
             </div>
           </div>
@@ -313,9 +323,10 @@
                   About Us
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, vitae. Dolorem incidunt
-                  consectetur, recusandae enim officiis mollitia modi consequatur ab non animi provident quis asperiores
-                  eius omnis suscipit maiores perferendis?
+                  Kartikeya Spaces is Navi Mumbai’s trusted commercial real estate partner, specializing in office,
+                  retail, and warehouse leasing for over 15 years. We offer personalized solutions, expert market
+                  insights, and affordable pricing for businesses seeking premium commercial properties. Let us help you
+                  find the right space to grow your business.
                 </p>
               </div>
             </div>
@@ -351,7 +362,7 @@
                   <a href="">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a href="https://www.linkedin.com/company/kartikeya-spaces/" target="_blank">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
                   <a href="">
@@ -394,9 +405,8 @@
     <!-- custom js -->
     <script src="js/custom.js"></script>
 
-    <script src="js/form-submit.js"></script>
-
     <script src="js/property-listing.js"></script>
+    <script src="js/forms.js"></script>
 
 </body>
 

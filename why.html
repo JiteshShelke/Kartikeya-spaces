@@ -48,7 +48,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              <img src="./images/kartikeya logo.png" alt="" style="width: 200px; height: 100px;">
+              <img src="./images/kartikeya logo.png" alt="" style="width: 200px; height: 100px;" loading="lazy">
             </span>
           </a>
 
@@ -84,7 +84,8 @@
               </form> -->
             </ul>
             <div class="quote_btn-container ms-auto">
-              <a href="javascript:void(0);" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#quoteModal" style="color: white; background-color: #fa4952; border: none;">
+              <a href="javascript:void(0);" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#quoteModal"
+                style="color: white; background-color: #fa4952; border: none;">
                 Get A Quote
               </a>
             </div>
@@ -95,247 +96,259 @@
     <!-- end header section -->
 
     <!-- Quote Modal -->
-  <div class="modal fade quote-modal-scope" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel"
+    <div class="modal fade quote-modal-scope" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center align-items-center"
         style="min-height: 100vh;">
         <div class="modal-content rounded-4 shadow" style="max-width: 700px;">
-        <div class="modal-header text-white" style="background-color: #fa4952;">
-          <h5 class="modal-title" id="quoteModalLabel">Contact Us</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-4 bg-white">
-          <form id="quoteEnquiryForm">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-              </div>
-              <div class="col-md-6">
-                <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-              </div>
-              <div class="col-md-6">
-                <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select" name="service" required>
-                  <option value="">-- Select Service --</option>
-                  <option value="Buy">Buy Property</option>
-                  <option value="Rent">Rent Property</option>
-                  <option value="Sell">Sell Property</option>
-                  <option value="Consult">Consultation</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <textarea class="form-control" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-              </div>
-
-              <!-- Hidden Fields for FormSubmit -->
-              <input type="hidden" name="_subject" value="New Contact Request - Kartikeya Spaces">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-            </div>
-
-            <div class="text-center mt-4">
-              <button type="submit" class="btn px-5 py-2 text-white" style="background-color: #fa4952;">
-                Send Request <i class="bi bi-send-fill ms-2"></i>
-              </button>
-            </div>
-
-            <!-- Success Message -->
-            <div id="quoteSuccessMsg" class="alert alert-success mt-3 text-center" style="display: none;">
-              ✅ Your request has been sent successfully!
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  
-
-  <!-- why us section -->
-
-  <section class="why_us_section layout_padding pt-5">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Why Choose Us?
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/w1.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Satisfied Clients
-              </h5>
-              <p>
-                Our commercial spaces in Navi Mumbai are trusted by numerous businesses. We’ve built a strong reputation for delivering high-quality, Vastu-compliant properties that support business growth and client satisfaction.
-              </p>
-            </div>
+          <div class="modal-header text-white" style="background-color: #fa4952;">
+            <h5 class="modal-title" id="quoteModalLabel">Contact Us</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/w2.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                24/7 Assistance
-              </h5>
-              <p>
-               Whether it's a new site visit or post-sale queries, our dedicated support team is available round the clock to ensure a seamless experience with your commercial space in Navi Mumbai.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/w3.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Affordable price
-              </h5>
-              <p>
-                We provide strategically located commercial properties in Navi Mumbai at competitive prices making it easier for businesses to grow without compromising on quality or connectivity.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          Read More
-        </a>
-      </div>
-    </div>
-  </section>
+          <div class="modal-body p-4 bg-white">
+            <form id="quoteEnquiryForm" class="google-form">
+              <div class="row g-3">
 
-  <!-- end why us section -->
+                <!-- Hidden field for identifying form -->
+                <input type="hidden" name="formName" value="ContactUs">
 
-  <!-- info section -->
-  <section class="info_section ">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                </div>
 
-    <div class="container">
-      <div class="contact_nav">
-        <a href="">
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <span>
-            Call : +01 123455678990
-          </span>
-        </a>
-        <a href="">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <span>
-            Email : demo@gmail.com
-          </span>
-        </a>
-        <a href="">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <span>
-            Location
-          </span>
-        </a>
-      </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                </div>
 
-      <div class="info_top ">
-        <div class="row info_main_row">
-          <div class=" col-md-4 col-lg-4 ">
-            <div class="info_about">
-              <h4>
-                About Us
-              </h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, vitae. Dolorem incidunt consectetur, recusandae enim officiis mollitia modi consequatur ab non animi provident quis asperiores eius omnis suscipit maiores perferendis?
-              </p>
-            </div>
-          </div>
-          <div class=" col-md-4 col-lg-3 mx-auto">
-            <div class="info_links">
-              <h4>
-                QUICK LINKS
-              </h4>
-              <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="" href="about.html"> About</a>
-                <a class="" href="property.html">Property</a>
-                <a class="" href="why.html">Why Us</a>
-                <a class="" href="testimonial.html">Testimonial</a>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                </div>
+
+                <div class="col-md-6">
+                  <select class="form-select" name="service" required>
+                    <option value="">-- Select Service --</option>
+                    <option value="Buy">Buy Property</option>
+                    <option value="Rent">Rent Property</option>
+                    <option value="Sell">Sell Property</option>
+                    <option value="Consult">Consultation</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="4" placeholder="Write your message here..."
+                    required></textarea>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info_form">
-              <h4>
-                SIGN UP TO OUR NEWSLETTER
-              </h4>
-              <form action="">
-                <input type="text" placeholder="Enter Your Email" />
-                <button type="submit">
-                  Subscribe
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn px-5 py-2 text-white" style="background-color: #fa4952;">
+                  Send Request <i class="bi bi-send-fill ms-2"></i>
                 </button>
-              </form>
-              <div class="social_box">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
+              </div>
+
+              <!-- Success Message -->
+              <div id="quoteSuccessMsg" class="alert alert-success mt-3 text-center"
+                style="display: none; background-color: #fa4952; color: white;">
+                Your request has been sent successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- why us section -->
+
+    <section class="why_us_section layout_padding pt-5">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            Why Choose Us?
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mx-auto">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/w1.png" alt="" loading="lazy">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Satisfied Clients
+                </h5>
+                <p>
+                  Our commercial spaces in Navi Mumbai are trusted by numerous businesses. We’ve built a strong
+                  reputation for delivering high-quality, Vastu-compliant properties that support business growth and
+                  client satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mx-auto">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/w2.png" alt="" loading="lazy">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  24/7 Assistance
+                </h5>
+                <p>
+                  Whether it's a new site visit or post-sale queries, our dedicated support team is available round the
+                  clock to ensure a seamless experience with your commercial space in Navi Mumbai.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mx-auto">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/w3.png" alt="" loading="lazy">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Affordable price
+                </h5>
+                <p>
+                  We provide strategically located commercial properties in Navi Mumbai at competitive prices making it
+                  easier for businesses to grow without compromising on quality or connectivity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- end why us section -->
+
+    <!-- info section -->
+    <section class="info_section ">
+
+      <div class="container">
+        <div class="contact_nav">
+          <a href="">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span>
+              Call : +01 123455678990
+            </span>
+          </a>
+          <a href="">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span>
+              Email : demo@gmail.com
+            </span>
+          </a>
+          <a href="">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <span>
+              Location
+            </span>
+          </a>
+        </div>
+
+        <div class="info_top ">
+          <div class="row info_main_row">
+            <div class=" col-md-4 col-lg-4 ">
+              <div class="info_about">
+                <h4>
+                  About Us
+                </h4>
+                <p>
+                  Kartikeya Spaces is Navi Mumbai’s trusted commercial real estate partner, specializing in office,
+                  retail, and warehouse leasing for over 15 years. We offer personalized solutions, expert market
+                  insights, and affordable pricing for businesses seeking premium commercial properties. Let us help you
+                  find the right space to grow your business.
+                </p>
+              </div>
+            </div>
+            <div class=" col-md-4 col-lg-3 mx-auto">
+              <div class="info_links">
+                <h4>
+                  QUICK LINKS
+                </h4>
+                <div class="info_links_menu">
+                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="" href="about.html"> About</a>
+                  <a class="" href="property.html">Property</a>
+                  <a class="" href="why.html">Why Us</a>
+                  <a class="" href="testimonial.html">Testimonial</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info_form">
+                <h4>
+                  SIGN UP TO OUR NEWSLETTER
+                </h4>
+                <form action="">
+                  <input type="text" placeholder="Enter Your Email" />
+                  <button type="submit">
+                    Subscribe
+                  </button>
+                </form>
+                <div class="social_box">
+                  <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/company/kartikeya-spaces/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end info_section -->
+    </section>
+    <!-- end info_section -->
 
 
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Free Html Templates</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- nice select -->
-  <script src="js/jquery.nice-select.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
+    <!-- nice select -->
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
 
-  <script src="js/form-submit.js"></script>
+    <script src="js/form-submit.js"></script>
 
-  <script src="js/property-listing.js"></script>
+    <script src="js/property-listing.js"></script>
 
 </body>
 
